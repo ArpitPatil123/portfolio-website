@@ -255,35 +255,45 @@ section:not(:first-child){
 .projects_container{
     display: grid;
     place-items: center;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     margin-top: 24px;
     gap: 24px;
 }
 .projects_container .project_card{
     border-radius: 12px;
     background-color: var(--secondary-color);
-    height: 550px;
 }
 .project_card{
     display: flex;
     flex-direction: column;
+    position: relative;
+    overflow-y: hidden;
+}
+.project_card:hover .project_info{
+    display: flex;
+    transform: translateY(0);
+}
+.project_card:hover .project_img img{
+    filter: brightness(60%);
 }
 .project_card .project_img img{
-    /* height: 250px; */
     object-fit: cover;
-    height: 300px;
-    width: 400px;
-    /* width: 100%; */
-    border-top-right-radius: 12px;
-    border-top-left-radius: 12px;
+    height: 200px;
+    width: 300px;
+    border-radius: 12px;
+    transition: all 200ms ease-in-out;
 }
 .project_card .project_info{
+    position: absolute;
     color: var(--primary-color);
     padding: 12px;
     display: flex;
     flex-direction: column;
     gap: 24px;
     flex: 1;
+    bottom: 0;
+    transform: translateY(100%);
+    transition: all 500ms ease-in-out;
 }
 .project_card .project_info > *{
     flex: 1;
@@ -329,4 +339,41 @@ section:not(:first-child){
 a{
     text-decoration: none;
     color: var(--primary-color);
+}
+
+
+/* /////// Achievements CSS ////////////// */
+.achievements_container{
+    margin-top: 48px;
+    display: flex;
+    gap: 24px;
+}
+
+.achievement_card{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+}
+
+.achievement_card .achievement_img img{
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+}
+
+.achievement_card .description{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.achievement_card .description h3{
+    color: var(--text-color);
+    font-size: 36px;
+}
+.achievement_card .description p{
+    font-size: 18px;
+    line-height: 28px;
 }
