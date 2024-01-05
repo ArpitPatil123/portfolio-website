@@ -241,7 +241,6 @@ section:not(:first-child){
     grid-template-columns: repeat(4, 1fr);
     gap: 12px;
     transition: all 200ms ease-in-out;
-    /* min-height: 500px; */
 }
 .backend, .database, .devops {
     display: none;
